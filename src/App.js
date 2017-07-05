@@ -1,6 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import BootstrapNavBar from './BootstrapNavBar'
+import BootstrapNavBar from './BootstrapNavBar';
+import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
+import $ from 'jquery';
+import  Home from './Home' ;
+import  About from './About';
+import  Atlanta from './Atlanta';
+import  Images from './Images';
+import  MayorMessage from './MayorMessage';
 
 var atlImages = [
   'http://i.huffpost.com/gen/1716876/images/o-ATLANTA-TRAFFIC-facebook.jpg',
@@ -8,15 +15,25 @@ var atlImages = [
   'https://upload.wikimedia.org/wikipedia/commons/a/a3/Piedmont-park-urban-park.jpg'
 ]
 
+
 class App extends Component {
   render() {
     return (
-      <div>
-        <BootstrapNavBar />
-        <div className="container main">
-          <h1>Main App</h1>
-        </div>
-      </div>
+      <Router>
+          <div>
+            <BootstrapNavBar />
+            <div className="container main">
+              <h1>Main App</h1>
+            </div>
+            <Route exact={true} path='/' component={Home} />
+            <Route exact={true} path='/one'component={About} />
+            <Route exact={true} path='/two' component={Atlanta} />
+            <Route exact={true} path='/three' render={()=>(
+              <Images imagesArray={atlImages} />
+               )} />
+            <Route exact={true} path='/four' component={MayorMessage} />
+          </div>
+      </Router>
     );
   }
 }

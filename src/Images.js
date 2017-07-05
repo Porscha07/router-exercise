@@ -1,6 +1,18 @@
+import React, { Component } from 'react';
+import $ from 'jquery';
+
+
+
 function Images(props){
-	// Map through images
+	const localimages=[]
+	props.imagesArray.map((image, index)=>{ 
+		localimages.push(<img src={image}/>)
+	})
 	return(
-		<p>Images go here as props</p>
+		<div>
+			{localimages}
+		</div>
 	)
 }
+
+export default Images;

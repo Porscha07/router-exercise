@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import $ from 'jquery';
 class MayorMessage extends Component {
   render() {
     return (
@@ -23,4 +23,4 @@ class MayorMessage extends Component {
   }
 }
 
-export default App;
+export default MayorMessage;

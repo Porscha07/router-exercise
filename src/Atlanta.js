@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-
-class About extends Component {
+import $ from 'jquery';
+class Atlanta extends Component {
 	constructor(props) {
 		super(props);
 		this.state={
@@ -17,7 +17,11 @@ class About extends Component {
 		$.getJSON(url, (weatherData) =>{
 			console.log(weatherData);
 			this.setState({
-
+				icon: "",
+				temp: "",
+				temp_min: "",
+				temp_max: "",
+				desc: ""
 			})
 		});
 	}
@@ -32,4 +36,4 @@ class About extends Component {
 	}
 }
 
-export default About;
+export default Atlanta;
